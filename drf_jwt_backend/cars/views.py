@@ -8,12 +8,21 @@ from .serializer import CarSerializer
 from django.contrib.auth.models import User
 
 
-class CarList(APIView):
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_all_cars(request):
+    cars = Car.objects.all()
+    serializer = CarSerializer(cars, many=True)
+    return Response(serializer.data)     
     
-    permission_classes = [AllowAny]
     
-    def get(self, request):
-        cars = Car.objects.all()
-        serializer = CarSerializer(cars, many=True)
-        return Response(serializer.data)
+@api_view(['POST'])  
+@permission_classes([IsAuthenticated])
+def user_cars(request):
+    if request.method == 'POST':
+        serializer = CarSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
