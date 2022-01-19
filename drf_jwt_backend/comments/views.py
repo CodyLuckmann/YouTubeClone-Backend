@@ -40,3 +40,10 @@ def reply_to_comments(request):
             serializer.save() 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def show_replies(request):
+    replies = Reply.objects.all()
+    serializer = ReplySerializer(replies, many=True)
+    return Response(serializer.data)
