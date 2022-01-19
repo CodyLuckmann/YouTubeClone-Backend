@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "da3153ab-300b-44e5-8b13-a8038225f4b4",
+		"_postman_id": "7e877f0b-e3b0-4565-894d-29554b1379e0",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -106,6 +106,316 @@
 								"login",
 								"refresh",
 								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cars",
+			"item": [
+				{
+					"name": "Get_Cars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/cars/all/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars",
+								"all",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Car",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzNDAxODc5LCJpYXQiOjE2NDI1Mzc4NzksImp0aSI6IjRhYWU3Mjc3OGFiNzRmZjJiZDFmMDdmMjYwNjUyMjJhIiwidXNlcl9pZCI6Mn0.LrT-N-B-0OuwiwkClTJo1u-0ksD59tyyYE3AwwDtCPQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"make\": \"Subaru\",\r\n    \"model\": \"Outback\",\r\n    \"year\": \"2021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/cars/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Cars_For_User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzNDA0NzY3LCJpYXQiOjE2NDI1NDA3NjcsImp0aSI6IjkyMGIzNzkyNGMyODQ3ZjM4ZjczNTRjNmFkY2M0ZjIwIiwidXNlcl9pZCI6Mn0.emT70b_C9hJu29mQ8iD7cFC5Ef-WUGqiQt5oXctqCRw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/cars/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "YouTube_Clone",
+			"item": [
+				{
+					"name": "Get_Comments_By_Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzNDc3MzUxLCJpYXQiOjE2NDI2MTMzNTEsImp0aSI6ImUzZjY0YzY1N2U1NTRjNDU5OTgyNWE2MDQwYThhYzQ2IiwidXNlcl9pZCI6Mn0.Uf59FRXeFsahD_MIpnuKwdpPQmyUCH7esn-hEQEYgyM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"video_id\": \"1\",\r\n    \"text\": \"Comment on video\",\r\n    \"likes\": \"0\",\r\n    \"dislikes\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reply_to_Comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzNDc3MzUxLCJpYXQiOjE2NDI2MTMzNTEsImp0aSI6ImUzZjY0YzY1N2U1NTRjNDU5OTgyNWE2MDQwYThhYzQ2IiwidXNlcl9pZCI6Mn0.Uf59FRXeFsahD_MIpnuKwdpPQmyUCH7esn-hEQEYgyM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"comment\": 1,\r\n    \"text\": \"This is a reply to comment one\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/reply/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"reply",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Replies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzNDg2NzE4LCJpYXQiOjE2NDI2MjI3MTgsImp0aSI6Ijg3MzlkY2FiNDM1NzRhOGViZWUzZjM1ZTVmMGZiMTMzIiwidXNlcl9pZCI6Mn0.9a4ndV1EZO5GTjXFJ8__nHA0I1H-hXmJPckosXaF0aA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/replies/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"replies",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzNDg2NzE4LCJpYXQiOjE2NDI2MjI3MTgsImp0aSI6Ijg3MzlkY2FiNDM1NzRhOGViZWUzZjM1ZTVmMGZiMTMzIiwidXNlcl9pZCI6Mn0.9a4ndV1EZO5GTjXFJ8__nHA0I1H-hXmJPckosXaF0aA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"video_id\": \"1\",\r\n    \"text\": \"updated comment\",\r\n    \"likes\": \"0\",\r\n    \"dislikes\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/update/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzNDg2NzE4LCJpYXQiOjE2NDI2MjI3MTgsImp0aSI6Ijg3MzlkY2FiNDM1NzRhOGViZWUzZjM1ZTVmMGZiMTMzIiwidXNlcl9pZCI6Mn0.9a4ndV1EZO5GTjXFJ8__nHA0I1H-hXmJPckosXaF0aA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/delete/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"delete",
+								"3"
 							]
 						}
 					},
