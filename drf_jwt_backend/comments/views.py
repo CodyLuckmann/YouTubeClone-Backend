@@ -12,4 +12,8 @@ from django.contrib.auth.models import User
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_all_comments()
+def get_all_comments(requset):
+    comments = Comment.objects.all()
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data)
+
