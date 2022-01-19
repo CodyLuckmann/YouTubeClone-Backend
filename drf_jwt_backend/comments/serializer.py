@@ -12,10 +12,10 @@ class CommentSerializer(serializers.ModelSerializer):
     user = UserSerializer(many=False, read_only=True)
     class Meta:
         model = Comment
-        fields = ['user', 'video_id', 'text', 'likes', 'dislikes']
+        fields = ['user', 'video_id', 'text', 'likes', 'dislikes', 'id']
         
 class ReplySerializer(serializers.ModelSerializer):
     user = UserSerializer(many=False, read_only=True)
     class Meta:
         model = Reply
-        fields = ['user', 'comment', 'text']
+        fields = ['user', 'comment', 'text' , 'id']
