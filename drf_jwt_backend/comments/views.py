@@ -15,7 +15,7 @@ from django.contrib.auth.models import User
 def get_comments_by_Id(request, video_id):
     comments = Comment.objects.filter(video_id=video_id)
     serializer = CommentSerializer(comments, many=True)
-    return Response(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
@@ -46,7 +46,7 @@ def reply_to_comments(request):
 def get_replies(request, comment_id):
     replies = Reply.objects.filter(comment=comment_id)
     serializer = ReplySerializer(replies, many=True)
-    return Response(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
