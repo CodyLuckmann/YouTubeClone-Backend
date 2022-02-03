@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'drf_jwt_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'drf_jwt_database',
+        'NAME': 'ytc_backend',
         'USER': 'root',
         'PASSWORD': 'example',
         'HOST': 'db',
@@ -169,8 +169,3 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(days=10),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=20),
 }
-
-try:
-    from drf_jwt_backend.local_settings import *
-except ImportError:
-    pass
