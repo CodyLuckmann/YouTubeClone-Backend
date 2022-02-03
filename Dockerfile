@@ -18,4 +18,4 @@ COPY . /app
 
 RUN adduser -u 1234 --disabled-password nonroot-user
 
-USER appuser
+USER nonroot-user
