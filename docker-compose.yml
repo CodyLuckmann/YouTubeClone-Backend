@@ -16,22 +16,21 @@ services:
 
   ytc-backend:
     container_name: ytc-backend-prod
-    image: <dockerID>/ytc-backend-prod
+    image: cmluckmann/ytc-backend-prod
     build: 
       context: .
       dockerfile: Dockerfile
-    command: python ./drf_jwt_backend/manage/py runserver 0.0.0.0:8000
+    command: python ./drf_jwt_backend/manage.py runserver 0.0.0.0:8000
     ports:
-      - 8000:8000
+      - "8000:8000"
     links:
       - db
-      - migration
     depends_on: 
       - migration
 
   migration:
     container_name: ytc-backend-migration
-    image: <dockerID>/ytc-backend-prod
+    image: cmluckmann/ytc-backend-prod
     env_file:
       - .live.env
     command:
@@ -44,4 +43,3 @@ services:
       - db 
     depends_on:
       - db
-      
